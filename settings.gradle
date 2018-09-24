@@ -1,0 +1,4 @@
+rootProject.name = 'swi'
+include 'siw_bl'
+include 'swi_dal'
+
