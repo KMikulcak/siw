@@ -1,6 +1,6 @@
 package Model;
 
-public class TestModel {
+public class TestModel implements IModel {
   private final long id;
   private final String content;
 
