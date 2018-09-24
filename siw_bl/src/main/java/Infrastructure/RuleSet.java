@@ -18,9 +18,6 @@ public class RuleSet {
     _createdAt = new Date();
 
     Calendar calendar = Calendar.getInstance();
-    calendar.add(Calendar.HOUR, -2);
-    calendar.add(Calendar.MINUTE, 30);
-    calendar.add(Calendar.SECOND, 300);
 
     switch (_updateIntervalUnit){
       case Second:
