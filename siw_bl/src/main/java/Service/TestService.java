@@ -25,12 +25,16 @@ public class TestService {
   }
 
   public TestModel Get(int id){
-    TestModel testModel = (TestModel) Cache.Current().get(Cache.KeyBuilder("test", Integer.toString(id)));
-    if(testModel == null) {
-      testModel = _testRepository.Get(id);
-      Cache.Current().add(Cache.KeyBuilder("test", Integer.toString(id)), testModel,
-          _ruleSet.UpdateDuration());
-    }
+    TestModel testModel = null;
+    if(_ruleSet.IsCaching()) {
+      testModel = (TestModel) Cache.Current()
+          .get(Cache.KeyBuilder("test", Integer.toString(id)));
+      if (testModel == null) {
+        testModel = _testRepository.Get(id);
+        Cache.Current().add(Cache.KeyBuilder("test", Integer.toString(id)), testModel,
+            _ruleSet.UpdateDuration());
+      }
+    }else testModel = _testRepository.Get(id);
     return testModel;
   }
 }
