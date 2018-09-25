@@ -1,6 +1,8 @@
-package Infrastructure;
+package swi_bl.Infrastructure;
 
 import com.google.common.primitives.Longs;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
+import org.pmw.tinylog.Logger;
 
 public class Cache {
 
@@ -18,7 +21,7 @@ public class Cache {
   private final DelayQueue<DelayedCacheObject> cleaningUpQueue = new DelayQueue<>();
   private static Cache _cache;
 
-  public Cache() {
+  Cache() {
     Thread cleanerThread = new Thread(() -> {
       while (!Thread.currentThread().isInterrupted()) {
         try {
@@ -49,6 +52,12 @@ public class Cache {
       SoftReference<Object> reference = new SoftReference<>(value);
       cache.put(key, reference);
       cleaningUpQueue.put(new DelayedCacheObject(key, reference, expiryTime));
+
+      Logger.info(this.getClass().toString()
+          + ": added "
+          + value.getClass().toString()
+          + ", duration in seconds: " + LocalDateTime.now().plusSeconds(periodInMillis / 1000).format(
+          DateTimeFormatter.ISO_DATE_TIME));
     }
   }
 

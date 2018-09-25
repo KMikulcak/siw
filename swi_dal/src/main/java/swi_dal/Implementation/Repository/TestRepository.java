@@ -1,11 +1,13 @@
-package Implementation.Repository;
+package swi_dal.Implementation.Repository;
 
-import Dto.TestDto;
-import Model.TestModel;
-import Repository.ITestRepository;
+import java.util.ArrayList;
+import java.util.List;
+import swi_bl.Model.TestModel;
+import swi_bl.Repository.ITestRepository;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import swi_dal.Dto.TestDto;
 
 public class TestRepository implements ITestRepository {
 
@@ -22,5 +24,15 @@ public class TestRepository implements ITestRepository {
   public TestModel Get(int id) {
     TestDto testDto = GetDto(id);
     return new TestModel(testDto.Id(), testDto.Name() + " " + testDto.Prename() + " " + _dateFormat.format(testDto.Birthday()));
+  }
+
+  public List<TestModel> Get() {
+    List<TestModel> models = new ArrayList<TestModel>();
+    for (int i = 0; i < 10; i++) {
+      TestDto testDto = GetDto(i);
+      models.add(new TestModel(testDto.Id(),
+          testDto.Name() + " " + testDto.Prename() + " " + _dateFormat.format(testDto.Birthday())));
+    }
+    return models;
   }
 }

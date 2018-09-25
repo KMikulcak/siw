@@ -1,4 +1,4 @@
-package Dto;
+package swi_dal.Dto;
 
 import java.util.Date;
 

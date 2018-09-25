@@ -25,6 +25,10 @@ repositories {
 
 
 dependencies {
+    implementation project(':swi_dal')
+    implementation project(':siw_bl')
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'org.tinylog', name: 'tinylog', version: '1.3.5'
+    compile group: 'com.google.inject', name: 'guice', version: '4.2.1'
 }

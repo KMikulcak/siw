@@ -1,6 +1,6 @@
-package Infrastructure;
+package swi_bl.Infrastructure;
 
-import Infrastructure.RuleSet.UpdateIntervalUnits;
+import swi_bl.Infrastructure.RuleSet.UpdateIntervalUnits;
 
 public class RuleSetBuilder {
   private boolean _isCaching = false;

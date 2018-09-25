@@ -17,6 +17,8 @@
 *.iml
 *.ipr
 /out/
+siw_bl/out/
+swi_dal/out/
 
 ### NetBeans ###
 /nbproject/private/

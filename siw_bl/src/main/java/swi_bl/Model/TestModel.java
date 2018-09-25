@@ -1,4 +1,4 @@
-package Model;
+package swi_bl.Model;
 
 public class TestModel implements IModel {
   private final long id;
