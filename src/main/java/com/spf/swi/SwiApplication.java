@@ -1,5 +1,6 @@
 package com.spf.swi;
 
+import com.spf.swi.Bootstrapper.BootMode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SwiApplication {
 
   public static void main(String[] args) {
+    //default Mock
+    Bootstrapper.Current().Build(BootMode.Mock);
+
     SpringApplication.run(SwiApplication.class, args);
   }
+
 }

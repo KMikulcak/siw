@@ -12,11 +12,13 @@ public class RuleSet {
   private final int _updateInterval;
   private final LocalDateTime _createdAt;
   private final long _updateDuration;
+  private final String _cacheKeyPrefix;
 
-  RuleSet(boolean isCaching, UpdateIntervalUnits updateIntervalUnit, int updateInterval){
+  RuleSet(boolean isCaching, UpdateIntervalUnits updateIntervalUnit, int updateInterval, String cacheKeyPrefix){
     _isCaching = isCaching;
     _updateIntervalUnit = updateIntervalUnit;
     _updateInterval = updateInterval;
+    _cacheKeyPrefix = cacheKeyPrefix;
     _createdAt = LocalDateTime.now();
     LocalDateTime _nextTime = LocalDateTime.now();
 
@@ -56,6 +58,10 @@ public class RuleSet {
 
   public long UpdateDuration(){
     return _updateDuration;
+  }
+
+  public String CacheKeyPrefix(){
+    return _cacheKeyPrefix;
   }
 
   public enum UpdateIntervalUnits{

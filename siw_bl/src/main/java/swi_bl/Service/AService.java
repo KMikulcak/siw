@@ -5,9 +5,9 @@ import java.util.List;
 import org.pmw.tinylog.Logger;
 import swi_bl.Infrastructure.Cache;
 import swi_bl.Infrastructure.RuleSet;
-import swi_bl.Model.IModel;
+import swi_bl.Model.IEntity;
 
-abstract class AService<Model extends IModel> {
+abstract class AService<Entity extends IEntity, Identifier, Result> {
 
   private final RuleSet _ruleSet;
   private String _keyPrefix;
@@ -25,44 +25,44 @@ abstract class AService<Model extends IModel> {
     return _keyPrefix;
   }
 
-  public Model Get(int id) {
-    Model model = null;
+  public Entity Get(Identifier id) {
+    Entity entity = null;
 
     if (_ruleSet.IsCaching()) {
-      model = (Model) Cache.Current()
-          .get(Cache.KeyBuilder(_keyPrefix, Integer.toString(id)));
-      if (model == null) {
-        model = GetModel(id);
-        Cache.Current().add(Cache.KeyBuilder(_keyPrefix, Integer.toString(id)), model,
+      entity = (Entity) Cache.Current()
+          .get(Cache.KeyBuilder(_keyPrefix, String.valueOf(id)));
+      if (entity == null) {
+        entity = GetEntityById(id);
+        Cache.Current().add(Cache.KeyBuilder(_keyPrefix, String.valueOf(id)), entity,
             _ruleSet.UpdateDuration());
       }
     } else {
-      model = GetModel(id);
+      entity = GetEntityById(id);
     }
 
-    return model;
+    return entity;
   }
 
-  abstract Model GetModel(int id);
+  abstract Entity GetEntityById(Identifier id);
 
-  public List<Model> Get() {
-    List<Model> models = new ArrayList<Model>();
+  public Result GetByFilter(String filter) {
+    Result result = null;
 
     if (_ruleSet.IsCaching()) {
 
-      models = (List<Model>) Cache.Current()
-          .get(Cache.KeyBuilder(_keyPrefix, models.getClass().toString()));
-      if (models == null) {
-        models = GetModels();
-        Cache.Current().add(Cache.KeyBuilder(_keyPrefix, models.getClass().toString()), models,
+      result = (Result) Cache.Current()
+          .get(Cache.KeyBuilder(_keyPrefix, filter));
+      if (result == null) {
+        result = GetResultByFilter(filter);
+        Cache.Current().add(Cache.KeyBuilder(_keyPrefix, filter), result,
             _ruleSet.UpdateDuration());
       }
     } else {
-      models = GetModels();
+      result = GetResultByFilter(filter);
     }
 
-    return models;
+    return result;
   }
 
-  abstract List<Model> GetModels();
+  abstract Result GetResultByFilter(String filter);
 }
