@@ -16,19 +16,19 @@ public class State implements IEntity {
   }
 
   @Override
-  public int Id() {
+  public int getId() {
     return _id;
   }
 
-  public StateType Type() {
+  public StateType getType() {
     return _stateType;
   }
 
-  public String ProcessingId() {
+  public String getProcessingId() {
     return _processingId;
   }
 
-  public Timestamp Time() {
+  public Timestamp getTime() {
     return _timeStamp;
   }
 

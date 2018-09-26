@@ -19,23 +19,23 @@ public class StateDiagram implements IEntity {
   }
 
   @Override
-  public int Id() {
+  public int getId() {
     return _id;
   }
 
-  public List<StateDiagramPoint> Injected() {
+  public List<StateDiagramPoint> getInjected() {
     return _injected;
   }
 
-  public List<StateDiagramPoint> Ordered() {
+  public List<StateDiagramPoint> getOrdered() {
     return _ordered;
   }
 
-  public List<StateDiagramPoint> Generated() {
+  public List<StateDiagramPoint> getGenerated() {
     return _generated;
   }
 
-  public List<StateDiagramPoint> Enriched() {
+  public List<StateDiagramPoint> getEnriched() {
     return _enriched;
   }
 
@@ -66,15 +66,15 @@ public class StateDiagram implements IEntity {
       _errors = errors;
     }
 
-    public State State(){
+    public State getState(){
       return _state;
     }
 
-    public int Orders(){
+    public int getOrders(){
       return _orders;
     }
 
-    public int Errors(){
+    public int getErrors(){
       return _errors;
     }
   }

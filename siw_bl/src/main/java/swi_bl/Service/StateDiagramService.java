@@ -43,7 +43,7 @@ public class StateDiagramService extends AService<StateDiagram, String, StateDia
 
     for (Order order:orders
     ) {
-      List<State> states = _stateRepository.GetAllByOrderProcessingId(order.ProcessingId());
+      List<State> states = _stateRepository.GetAllByOrderProcessingId(order.getProcessingId());
 
       StateDiagramSegmentBuilder(stateDiagram, order, states);
     }
@@ -54,7 +54,7 @@ public class StateDiagramService extends AService<StateDiagram, String, StateDia
   private void StateDiagramSegmentBuilder(StateDiagram stateDiagram, Order order, List<State> states){
     for (State state:states
     ) {
-      switch (state.Type()){
+      switch (state.getType()){
         case Ordered:
           stateDiagram.addOrdered(state, 1, 0);
           break;

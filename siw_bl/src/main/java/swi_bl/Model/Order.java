@@ -10,11 +10,11 @@ public class Order implements IEntity {
   }
 
   @Override
-  public int Id() {
+  public int getId() {
     return _id;
   }
 
-  public String ProcessingId() {
+  public String getProcessingId() {
     return _processingId;
   }
 }
