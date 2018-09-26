@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestController {
+public class StateDiagramController {
   private final StateDiagramService _stateDiagramService;
 
   //DPJ flag for inject
   @Autowired
-  public TestController(IOrderRepository orderRepository, IStateRepository stateRepository){
+  public StateDiagramController(IOrderRepository orderRepository, IStateRepository stateRepository){
     _stateDiagramService = new StateDiagramService(orderRepository, stateRepository,
         new RuleSetBuilder("stateDiagram")
             .IsCaching(true)
@@ -28,15 +28,15 @@ public class TestController {
             .BuildRuleSet());
   }
 
-  @RequestMapping("/test")
-  public StateDiagram test (@RequestParam(value="processingId", defaultValue="100-EE") String processingId) {
+  @RequestMapping("/StateDiagram")
+  public StateDiagram byProcessingId (@RequestParam(value="processingId", defaultValue="100-EE") String processingId) {
     return _stateDiagramService.Get(processingId);
   }
 
-  //@RequestMapping("/test/all")
-  //public List<TestModel> testAll () {
-    //return _testService.Get();
-  //}
+  @RequestMapping("/StateDiagram/Filter")
+  public StateDiagram byFilter (@RequestParam(value="filter", defaultValue="") String filter) {
+    return _stateDiagramService.GetByFilter(filter);
+  }
 }
 
 
