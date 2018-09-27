@@ -76,14 +76,14 @@ public class Cache {
   }
 
   public Object get(String key) {
-    Object obj =  Optional.ofNullable(cache.get(key)).map(SoftReference::get).orElse(null);
-    if(obj != null) {
+    Object obj = Optional.ofNullable(cache.get(key)).map(SoftReference::get).orElse(null);
+    if (obj != null) {
       Logger.info(this.getClass().toString()
           + ": get "
           + key
           + ", as " + obj.getClass().toString()
           + " from Cache");
-    }else{
+    } else {
       Logger.info(this.getClass().toString()
           + ": get "
           + key

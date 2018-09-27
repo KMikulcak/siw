@@ -7,7 +7,7 @@ import swi_dal.Dto.State;
 public final class DataSource extends ADataSource {
 
   @Override
-  String getHybernateConfig() {
+  String getHibernateConfig() {
     return null;
   }
 

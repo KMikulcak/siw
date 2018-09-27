@@ -6,6 +6,7 @@ import swi_bl.Model.Order;
 import swi_bl.Repository.IOrderRepository;
 
 public final class OrderService extends AService<Order, Integer, List<Order>> {
+
   private final IOrderRepository _orderRepository;
 
   public OrderService(IOrderRepository orderRepository, RuleSet ruleSet) {

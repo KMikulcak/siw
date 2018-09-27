@@ -24,12 +24,15 @@ public class OrderRepository extends BaseRepository
 
   @Override
   public Order Get(int id) {
-    swi_dal.Dto.Order result =  _dataSource.GetOrders("").stream().filter(order -> id == order.Id())
+    swi_dal.Dto.Order result = _dataSource.GetOrders("").stream().filter(order -> id == order.Id())
         .findFirst()
         .orElse(null);
 
-    if(result!=null) return _mapper.MapDto(result);
-    else return null;
+    if (result != null) {
+      return _mapper.MapDto(result);
+    } else {
+      return null;
+    }
   }
 
   @Override

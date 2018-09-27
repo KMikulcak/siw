@@ -9,6 +9,7 @@ import swi_dal.Dto.Order;
 import swi_dal.Dto.State;
 
 public final class MockDataSource extends ADataSource {
+
   private List<State> _states;
   private List<Order> _orders;
 
@@ -19,7 +20,7 @@ public final class MockDataSource extends ADataSource {
   }
 
   @Override
-  String getHybernateConfig() {
+  String getHibernateConfig() {
     return null;
   }
 

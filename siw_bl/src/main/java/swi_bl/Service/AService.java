@@ -27,7 +27,6 @@ abstract class AService<Entity extends IEntity, Identifier, Result> {
     Entity entity = null;
     //Logger.info(this.getClass().toString() + " Get() " +  + " by Id " + id.getClass().toString() + ": " + String.valueOf(id));
 
-
     if (_ruleSet.IsCaching()) {
       entity = (Entity) Cache.Current()
           .get(Cache.KeyBuilder(_keyPrefix, String.valueOf(id)));
@@ -69,8 +68,11 @@ abstract class AService<Entity extends IEntity, Identifier, Result> {
 
   abstract Result GetAll();
 
-  private Result GetResult(String filter){
-    if(filter.isEmpty()) return GetAll();
-    else return GetResultByFilter(filter);
+  private Result GetResult(String filter) {
+    if (filter.isEmpty()) {
+      return GetAll();
+    } else {
+      return GetResultByFilter(filter);
+    }
   }
 }

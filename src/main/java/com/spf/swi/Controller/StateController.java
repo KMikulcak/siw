@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import swi_bl.Infrastructure.RuleSet.UpdateIntervalUnits;
 import swi_bl.Infrastructure.RuleSetBuilder;
 import swi_bl.Model.State;
-import swi_bl.Model.StateDiagram;
 import swi_bl.Repository.IStateRepository;
 import swi_bl.Service.StateService;
 

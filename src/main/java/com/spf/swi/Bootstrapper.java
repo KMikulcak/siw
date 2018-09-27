@@ -17,7 +17,7 @@ public class Bootstrapper {
 
   private static Bootstrapper _current;
 
-  public Bootstrapper(){
+  public Bootstrapper() {
   }
 
   static Bootstrapper Current() {
@@ -65,6 +65,7 @@ public class Bootstrapper {
         }
       }
     }
+
     static IDataSource GetDataSource() {
       return _dataSource;
     }

@@ -5,9 +5,10 @@ import org.pmw.tinylog.Logger;
 public abstract class ADataSource implements IDataSource {
 
   //Hybernate init process
-  ADataSource(){
+  ADataSource() {
     Logger.info(this.getClass().toString() + " initialized");
   }
-//Hybernate
-  abstract String getHybernateConfig();
+
+  //Hybernate
+  abstract String getHibernateConfig();
 }

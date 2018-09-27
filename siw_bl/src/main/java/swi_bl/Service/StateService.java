@@ -6,6 +6,7 @@ import swi_bl.Model.State;
 import swi_bl.Repository.IStateRepository;
 
 public final class StateService extends AService<State, Integer, List<State>> {
+
   private final IStateRepository _stateRepository;
 
   public StateService(IStateRepository stateRepository, RuleSet ruleSet) {

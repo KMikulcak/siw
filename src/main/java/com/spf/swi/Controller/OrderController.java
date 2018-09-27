@@ -8,11 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import swi_bl.Infrastructure.RuleSet.UpdateIntervalUnits;
 import swi_bl.Infrastructure.RuleSetBuilder;
 import swi_bl.Model.Order;
-import swi_bl.Model.State;
 import swi_bl.Repository.IOrderRepository;
-import swi_bl.Repository.IStateRepository;
 import swi_bl.Service.OrderService;
-import swi_bl.Service.StateService;
 
 @RestController
 public class OrderController {

@@ -24,12 +24,15 @@ public class StateRepository extends BaseRepository
 
   @Override
   public State Get(int id) {
-    swi_dal.Dto.State result =  _dataSource.GetStates("").stream().filter(state -> id == state.Id())
+    swi_dal.Dto.State result = _dataSource.GetStates("").stream().filter(state -> id == state.Id())
         .findFirst()
         .orElse(null);
 
-    if(result!=null) return _mapper.MapDto(result);
-    else return null;
+    if (result != null) {
+      return _mapper.MapDto(result);
+    } else {
+      return null;
+    }
   }
 
   @Override
