@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import swi_bl.Infrastructure.RuleSet.UpdateIntervalUnits;
-import swi_bl.Infrastructure.RuleSetBuilder;
-import swi_bl.Model.Order;
-import swi_bl.Repository.IOrderRepository;
-import swi_bl.Service.OrderService;
+import monitoring_api_business.Infrastructure.RuleSet.UpdateIntervalUnits;
+import monitoring_api_business.Infrastructure.RuleSetBuilder;
+import monitoring_api_business.Model.Implementation.Order;
+import monitoring_api_business.Repository.Contract.IOrderRepository;
+import monitoring_api_business.Service.Implementation.OrderService;
 
 @RestController
 public class OrderController {

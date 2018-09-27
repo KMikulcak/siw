@@ -25,8 +25,8 @@ repositories {
 
 
 dependencies {
-    implementation project(':swi_dal')
-    implementation project(':siw_bl')
+    implementation project(':monitoring_api_business')
+    implementation project(':monitoring_api_data_access')
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile group: 'org.tinylog', name: 'tinylog', version: '1.3.5'

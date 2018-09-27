@@ -1,4 +1,4 @@
-rootProject.name = 'swi'
-include 'siw_bl'
-include 'swi_dal'
+rootProject.name = 'monitoring_api'
+include 'monitoring_api_business'
+include 'monitoring_api_data_access'
 

@@ -2,12 +2,12 @@ package com.spf.swi;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import swi_bl.Repository.IOrderRepository;
-import swi_bl.Repository.IStateRepository;
-import swi_dal.DataSource.DataSource;
-import swi_dal.DataSource.IDataSource;
-import swi_dal.DataSource.MockDataSource;
-import swi_dal.DataSource.SimulatorDataSource;
+import monitoring_api_business.Repository.Contract.IOrderRepository;
+import monitoring_api_business.Repository.Contract.IStateRepository;
+import swi_dal.DataSource.Implementation.DataSource;
+import swi_dal.DataSource.Contract.IDataSource;
+import swi_dal.DataSource.Implementation.MockDataSource;
+import swi_dal.DataSource.Implementation.SimulatorDataSource;
 import swi_dal.Repository.OrderRepository;
 import swi_dal.Repository.StateRepository;
 

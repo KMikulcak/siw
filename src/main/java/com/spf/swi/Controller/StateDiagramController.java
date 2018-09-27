@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import swi_bl.Infrastructure.RuleSet.UpdateIntervalUnits;
-import swi_bl.Infrastructure.RuleSetBuilder;
-import swi_bl.Model.StateDiagram;
-import swi_bl.Repository.IOrderRepository;
-import swi_bl.Repository.IStateRepository;
-import swi_bl.Service.StateDiagramService;
+import monitoring_api_business.Infrastructure.RuleSet.UpdateIntervalUnits;
+import monitoring_api_business.Infrastructure.RuleSetBuilder;
+import monitoring_api_business.Model.Implementation.StateDiagram;
+import monitoring_api_business.Repository.Contract.IOrderRepository;
+import monitoring_api_business.Repository.Contract.IStateRepository;
+import monitoring_api_business.Service.Implementation.StateDiagramService;
 
 @RestController
 public class StateDiagramController {
