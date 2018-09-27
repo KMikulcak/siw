@@ -9,13 +9,14 @@ public class StateMapper implements IMapper<State, swi_bl.Model.State> {
 
   @Override
   public swi_bl.Model.State MapDto(State dto) {
-    return new swi_bl.Model.State(dto.Id(), StateType.fromVal(dto.Type()), dto.ProcessingId(), dto.Time());
+    return new swi_bl.Model.State(dto.Id(), StateType.fromVal(dto.Type()), dto.ProcessingId(),
+        dto.Time());
   }
 
   @Override
   public List<swi_bl.Model.State> MapDto(List<State> states) {
     List<swi_bl.Model.State> entities = new ArrayList<swi_bl.Model.State>();
-    for (State state:states){
+    for (State state : states) {
       entities.add(MapDto(state));
     }
     return entities;

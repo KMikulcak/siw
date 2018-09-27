@@ -14,7 +14,7 @@ public class OrderMapper implements IMapper<Order, swi_bl.Model.Order> {
   @Override
   public List<swi_bl.Model.Order> MapDto(List<Order> orders) {
     List<swi_bl.Model.Order> entities = new ArrayList<swi_bl.Model.Order>();
-    for (Order order:orders){
+    for (Order order : orders) {
       entities.add(MapDto(order));
     }
     return entities;

@@ -1,7 +1,5 @@
 package swi_bl.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.pmw.tinylog.Logger;
 import swi_bl.Infrastructure.Cache;
 import swi_bl.Infrastructure.RuleSet;
@@ -16,7 +14,7 @@ abstract class AService<Entity extends IEntity, Identifier, Result> {
     _ruleSet = ruleSet;
     _keyPrefix = keyPrefix;
 
-    Logger.info(this.toString() + "initialized"
+    Logger.info(this.getClass().toString() + " initialized"
         + ", with KeyPrefix:'" + keyPrefix + "'"
         + ", and caching " + _ruleSet.IsCaching());
   }
@@ -27,6 +25,8 @@ abstract class AService<Entity extends IEntity, Identifier, Result> {
 
   public Entity Get(Identifier id) {
     Entity entity = null;
+    //Logger.info(this.getClass().toString() + " Get() " +  + " by Id " + id.getClass().toString() + ": " + String.valueOf(id));
+
 
     if (_ruleSet.IsCaching()) {
       entity = (Entity) Cache.Current()
@@ -47,22 +47,30 @@ abstract class AService<Entity extends IEntity, Identifier, Result> {
 
   public Result GetByFilter(String filter) {
     Result result = null;
+    //Logger.info(this.getClass().toString() + " Get() " + result.getClass().toString() + " by filter: " + filter);
 
     if (_ruleSet.IsCaching()) {
 
       result = (Result) Cache.Current()
           .get(Cache.KeyBuilder(_keyPrefix, filter));
       if (result == null) {
-        result = GetResultByFilter(filter);
+        result = GetResult(filter);
         Cache.Current().add(Cache.KeyBuilder(_keyPrefix, filter), result,
             _ruleSet.UpdateDuration());
       }
     } else {
-      result = GetResultByFilter(filter);
+      result = GetResult(filter);
     }
 
     return result;
   }
 
   abstract Result GetResultByFilter(String filter);
+
+  abstract Result GetAll();
+
+  private Result GetResult(String filter){
+    if(filter.isEmpty()) return GetAll();
+    else return GetResultByFilter(filter);
+  }
 }

@@ -7,7 +7,7 @@ import swi_dal.DataSource.IDataSource;
 import swi_dal.Mapping.StateMapper;
 
 public class StateRepository extends BaseRepository
-    implements IStateRepository  {
+    implements IStateRepository {
 
   private final StateMapper _mapper;
 
@@ -24,12 +24,18 @@ public class StateRepository extends BaseRepository
 
   @Override
   public State Get(int id) {
-    return null;
+    swi_dal.Dto.State result =  _dataSource.GetStates("").stream().filter(state -> id == state.Id())
+        .findFirst()
+        .orElse(null);
+
+    if(result!=null) return _mapper.MapDto(result);
+    else return null;
   }
 
   @Override
   public List<State> GetAll() {
-    return null;
+    List<swi_dal.Dto.State> states = _dataSource.GetStates("");
+    return _mapper.MapDto(states);
   }
 
   @Override

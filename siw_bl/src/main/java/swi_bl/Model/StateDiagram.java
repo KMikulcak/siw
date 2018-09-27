@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StateDiagram implements IEntity {
+
   private List<StateDiagramPoint> _injected;
   private List<StateDiagramPoint> _ordered;
   private List<StateDiagramPoint> _generated;
   private List<StateDiagramPoint> _enriched;
   private int _id;
 
-  public StateDiagram (int id){
+  public StateDiagram(int id) {
     _id = id;
     _ordered = new ArrayList<StateDiagramPoint>();
     _injected = new ArrayList<StateDiagramPoint>();
@@ -55,26 +56,27 @@ public class StateDiagram implements IEntity {
     _enriched.add(new StateDiagramPoint(state, orders, errors));
   }
 
-  public class StateDiagramPoint{
+  public class StateDiagramPoint {
+
     private int _orders;
     private int _errors;
     private State _state;
 
-    StateDiagramPoint(State state, int orders, int errors){
+    StateDiagramPoint(State state, int orders, int errors) {
       _state = state;
       _orders = orders;
       _errors = errors;
     }
 
-    public State getState(){
+    public State getState() {
       return _state;
     }
 
-    public int getOrders(){
+    public int getOrders() {
       return _orders;
     }
 
-    public int getErrors(){
+    public int getErrors() {
       return _errors;
     }
   }

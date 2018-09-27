@@ -3,6 +3,7 @@ package swi_bl.Model;
 import java.sql.Timestamp;
 
 public class State implements IEntity {
+
   private final int _id;
   private final StateType _stateType;
   private final String _processingId;
@@ -32,7 +33,7 @@ public class State implements IEntity {
     return _timeStamp;
   }
 
-  public enum StateType{
+  public enum StateType {
     Ordered(0),
     Enriched(1),
     Generated(2),
@@ -48,10 +49,6 @@ public class State implements IEntity {
       this.numVal = numVal;
     }
 
-    public int getNumVal() {
-      return numVal;
-    }
-
     public static StateType fromVal(int id) {
       for (StateType type : values()) {
         if (type.getNumVal() == id) {
@@ -59,6 +56,10 @@ public class State implements IEntity {
         }
       }
       return null;
+    }
+
+    public int getNumVal() {
+      return numVal;
     }
   }
 }

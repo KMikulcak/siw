@@ -3,6 +3,7 @@ package swi_dal.Dto;
 import java.sql.Timestamp;
 
 public class State {
+
   private final int _id;
   private final int _stateType;
   private final String _processingId;

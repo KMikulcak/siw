@@ -7,7 +7,7 @@ import swi_dal.DataSource.IDataSource;
 import swi_dal.Mapping.OrderMapper;
 
 public class OrderRepository extends BaseRepository
-    implements IOrderRepository  {
+    implements IOrderRepository {
 
   private final OrderMapper _mapper;
 
@@ -18,18 +18,24 @@ public class OrderRepository extends BaseRepository
 
   @Override
   public Order GetOrderByProcessingId(String processingId) {
-   List<swi_dal.Dto.Order> orders = _dataSource.GetOrders("where processingId=" + processingId);
-   return _mapper.MapDto(orders.get(0));
+    List<swi_dal.Dto.Order> orders = _dataSource.GetOrders("where processingId=" + processingId);
+    return _mapper.MapDto(orders.get(0));
   }
 
   @Override
   public Order Get(int id) {
-    return null;
+    swi_dal.Dto.Order result =  _dataSource.GetOrders("").stream().filter(order -> id == order.Id())
+        .findFirst()
+        .orElse(null);
+
+    if(result!=null) return _mapper.MapDto(result);
+    else return null;
   }
 
   @Override
   public List<Order> GetAll() {
-    return null;
+    List<swi_dal.Dto.Order> orders = _dataSource.GetOrders("");
+    return _mapper.MapDto(orders);
   }
 
   @Override

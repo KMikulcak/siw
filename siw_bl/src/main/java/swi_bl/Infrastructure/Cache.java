@@ -1,25 +1,24 @@
 package swi_bl.Infrastructure;
 
 import com.google.common.primitives.Longs;
+import java.lang.ref.SoftReference;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-
-import java.lang.ref.SoftReference;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import org.pmw.tinylog.Logger;
 
 public class Cache {
 
+  private static Cache _cache;
   private final ConcurrentHashMap<String, SoftReference<Object>> cache = new ConcurrentHashMap<>();
   private final DelayQueue<DelayedCacheObject> cleaningUpQueue = new DelayQueue<>();
-  private static Cache _cache;
 
   Cache() {
     Thread cleanerThread = new Thread(() -> {
@@ -36,9 +35,15 @@ public class Cache {
     cleanerThread.start();
   }
 
-  public static Cache Current(){
-    if(_cache == null) _cache = new Cache();
+  public static Cache Current() {
+    if (_cache == null) {
+      _cache = new Cache();
+    }
     return _cache;
+  }
+
+  public static String KeyBuilder(String prefix, String value) {
+    return prefix + value;
   }
 
   public void add(String key, Object value, long periodInMillis) {
@@ -56,17 +61,36 @@ public class Cache {
       Logger.info(this.getClass().toString()
           + ": added "
           + value.getClass().toString()
-          + ", duration in seconds: " + LocalDateTime.now().plusSeconds(periodInMillis / 1000).format(
-          DateTimeFormatter.ISO_DATE_TIME));
+          + ", duration in seconds: " + LocalDateTime.now().plusSeconds(periodInMillis / 1000)
+          .format(
+              DateTimeFormatter.ISO_DATE_TIME));
     }
   }
 
   public void remove(String key) {
     cache.remove(key);
+    Logger.info(this.getClass().toString()
+        + ": remove "
+        + key
+        + ", from Cache");
   }
 
   public Object get(String key) {
-    return Optional.ofNullable(cache.get(key)).map(SoftReference::get).orElse(null);
+    Object obj =  Optional.ofNullable(cache.get(key)).map(SoftReference::get).orElse(null);
+    if(obj != null) {
+      Logger.info(this.getClass().toString()
+          + ": get "
+          + key
+          + ", as " + obj.getClass().toString()
+          + " from Cache");
+    }else{
+      Logger.info(this.getClass().toString()
+          + ": get "
+          + key
+          + ", was NULL"
+          + " from Cache");
+    }
+    return obj;
   }
 
   public void clear() {
@@ -87,7 +111,7 @@ public class Cache {
     private final SoftReference<Object> _reference;
     private final long _expiryTime;
 
-    DelayedCacheObject(String key, SoftReference<Object> reference, long expiryTime){
+    DelayedCacheObject(String key, SoftReference<Object> reference, long expiryTime) {
       _key = key;
       _reference = reference;
       _expiryTime = expiryTime;
@@ -100,9 +124,5 @@ public class Cache {
     public int compareTo(Delayed o) {
       return Longs.compare(_expiryTime, ((DelayedCacheObject) o)._expiryTime);
     }
-  }
-
-  public static String KeyBuilder(String prefix, String value){
-    return prefix + value;
   }
 }
