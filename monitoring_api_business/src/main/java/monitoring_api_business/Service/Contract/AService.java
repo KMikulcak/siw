@@ -31,27 +31,29 @@ public abstract class AService<Model extends IModel, Identifier, Result> {
 
   public Model Get(Identifier id) {
     Model entity = null;
-    //Logger.info(this.getClass().toString() + " Get() " +  + " by Id " + id.getClass().toString() + ": " + String.valueOf(id));
 
-    if (_ruleSet.IsCaching()) {
-      entity = (Model) Cache.Current()
-          .get(Cache.KeyBuilder(_keyPrefix, String.valueOf(id)));
-      if (entity == null) {
+    try {
+      if (_ruleSet.IsCaching()) {
+        entity = (Model) Cache.Current()
+            .get(Cache.KeyBuilder(_keyPrefix, String.valueOf(id)));
+        if (entity == null) {
+          entity = GetEntityById(id);
+          Cache.Current().add(Cache.KeyBuilder(_keyPrefix, String.valueOf(id)), entity,
+              _ruleSet.UpdateDuration());
+        }
+      } else {
         entity = GetEntityById(id);
-        Cache.Current().add(Cache.KeyBuilder(_keyPrefix, String.valueOf(id)), entity,
-            _ruleSet.UpdateDuration());
       }
-    } else {
-      entity = GetEntityById(id);
+    } catch (Exception ex) {
+      Logger.error(ex);
     }
-
     return entity;
   }
 
   public Result GetByFilter(String filter){
     Result result = null;
-    //Logger.info(this.getClass().toString() + " Get() " + result.getClass().toString() + " by filter: " + filter);
 
+    try{
     if (_ruleSet.IsCaching()) {
 
       result = (Result) Cache.Current()
@@ -64,11 +66,13 @@ public abstract class AService<Model extends IModel, Identifier, Result> {
     } else {
       result = GetResult(filter);
     }
-
+    } catch (Exception ex) {
+      Logger.error(ex);
+    }
     return result;
   }
 
-  private Result GetResult(String filter) {
+  private Result GetResult(String filter) throws Exception {
     if (filter.isEmpty()) {
       return GetAll();
     } else {
