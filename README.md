@@ -1,2 +1,2 @@
 # siw
-![Screenshot](https://ibb.co/nrYap9)
+![Screenshot](monitoring_arc.png)
