@@ -1,15 +1,13 @@
 package swi_dal.DataSource.Implementation;
 
-import java.util.List;
-import java.util.Properties;
+import io.ebean.config.ServerConfig;
+import org.avaje.datasource.DataSourceConfig;
 import swi_dal.DataSource.Contract.ADataSource;
-import swi_dal.Entity.Implementation.Order;
-import swi_dal.Entity.Implementation.State;
 
 public final class SimulatorDataSource extends ADataSource {
 
   @Override
-  protected final Properties getHibernateConfig() {
+  protected ServerConfig getServerConfig() {
     return null;
   }
 }

@@ -7,63 +7,43 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import swi_dal.Entity.Contract.IEntity;
+import swi_dal.Entity.Contract.BaseEntity;
 
 @Entity
-@Table(name = "monitoring_state")
-public class State implements IEntity {
+public class State extends BaseEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", unique = true, nullable = false)
-  private int _id;
-  @Column(name = "stateType")
-  private int _stateType;
-  @Column(name = "processingID")
-  private String _processingId;
-  @Column(name = "timeStamp")
-  private Timestamp _timeStamp;
-
-  public State() {
-
-  }
+  int stateType;
+  String processingId;
+  Timestamp timeStamp;
 
   public State(int id, int stateType, String processingId, Timestamp timestamp){
-    _id = id;
-    _stateType = stateType;
-    _processingId = processingId;
-    _timeStamp = timestamp;
-  }
-
-  public int getId() {
-    return _id;
-  }
-
-  public void setId(int _id) {
-    this._id = _id;
+    this.id = id;
+    this.stateType = stateType;
+    this.processingId = processingId;
+    this.timeStamp = timestamp;
   }
 
   public int getStateType() {
-    return _stateType;
+    return stateType;
   }
 
-  public void setStateType(int _stateType) {
-    this._stateType = _stateType;
+  public void setStateType(int stateType) {
+    this.stateType = stateType;
   }
 
   public String getProcessingId() {
-    return _processingId;
+    return processingId;
   }
 
-  public void setProcessingId(String _processingId) {
-    this._processingId = _processingId;
+  public void setProcessingId(String processingId) {
+    this.processingId = processingId;
   }
 
-  public Timestamp getTimeStamp() {
-    return _timeStamp;
+  public Timestamp getTimeStampe() {
+    return timeStamp;
   }
 
-  public void setTimeStamp(Timestamp _timeStamp) {
-    this._timeStamp = _timeStamp;
+  public void setTimeStampe(Timestamp timeStampe) {
+    this.timeStamp = timeStampe;
   }
 }

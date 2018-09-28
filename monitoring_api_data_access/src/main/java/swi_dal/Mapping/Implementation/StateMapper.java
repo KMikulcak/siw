@@ -11,7 +11,7 @@ public class StateMapper implements IMapper<State, monitoring_api_business.Model
   @Override
   public monitoring_api_business.Model.Implementation.State MapEntity(State state) {
     return new monitoring_api_business.Model.Implementation.State(state.getId(), StateType.fromVal(state.getStateType()), state.getProcessingId(),
-        state.getTimeStamp());
+        state.getTimeStampe());
   }
 
   @Override

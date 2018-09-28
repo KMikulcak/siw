@@ -7,8 +7,8 @@
   <!-- A JPA Persistence Unit -->
   <persistence-unit name="monitoring" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <class>swi_dal.Entity.Implementation.Order</class>
-    <class>swi_dal.Entity.Implementation.State</class>
+    <class>org.example.domain.Order</class>
+    <class>org.example.domain.State</class>
     <properties>
       <property name="hibernate.hbm2ddl.auto" value=""/>
       <property name="hibernate.show_sql" value="false"/>

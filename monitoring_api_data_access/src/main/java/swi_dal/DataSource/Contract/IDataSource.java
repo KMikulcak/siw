@@ -1,10 +1,7 @@
 package swi_dal.DataSource.Contract;
 
-import javax.persistence.EntityManager;
-import org.hibernate.Session;
+import io.ebean.EbeanServer;
 
 public interface IDataSource {
-  public EntityManager EM();
-
-  public Session Session();
+  public EbeanServer Server();
 }

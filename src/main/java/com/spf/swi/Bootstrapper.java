@@ -8,8 +8,8 @@ import swi_dal.DataSource.Implementation.DataSource;
 import swi_dal.DataSource.Contract.IDataSource;
 import swi_dal.DataSource.Implementation.MockDataSource;
 import swi_dal.DataSource.Implementation.SimulatorDataSource;
-import swi_dal.Repository.OrderRepository;
-import swi_dal.Repository.StateRepository;
+import swi_dal.Repository.OrderRepositoryA;
+import swi_dal.Repository.StateRepositoryA;
 
 //flag DPJ Config
 @Configuration
@@ -34,12 +34,12 @@ public class Bootstrapper {
   //flag DPJ
   @Bean
   public IOrderRepository OrderRepository() {
-    return new OrderRepository(DataSourceFactory.GetDataSource());
+    return new OrderRepositoryA(DataSourceFactory.GetDataSource());
   }
 
   @Bean
   public IStateRepository StateRepository() {
-    return new StateRepository(DataSourceFactory.GetDataSource());
+    return new StateRepositoryA(DataSourceFactory.GetDataSource());
   }
 
   public enum BootMode {

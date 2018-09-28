@@ -1,36 +1,52 @@
 package swi_dal.DataSource.Implementation;
 
+import io.ebean.Transaction;
+import io.ebean.config.ServerConfig;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Properties;
-import javax.persistence.EntityManager;
-import org.hibernate.Session;
+import org.avaje.datasource.DataSourceConfig;
 import swi_dal.DataSource.Contract.ADataSource;
 import swi_dal.Entity.Implementation.Order;
 import swi_dal.Entity.Implementation.State;
 
 public final class MockDataSource extends ADataSource {
-
   public MockDataSource() {
     super();
 
-    EM().persist(GenerateMockOrders());
-    EM().persist(GenerateMockStates());
+    try (Transaction transaction = Server().beginTransaction()) {
+      for (Order order:GenerateMockOrders()
+      ) {
+        order.save();
+      }
+
+      for (State state:GenerateMockStates()
+      ) {
+        state.save();
+      }
+    }
+
   }
 
   @Override
-  protected final Properties getHibernateConfig() {
-    Properties properties = new Properties();
-    properties.setProperty("javax.persistence.jdbc.driver", "org.h2.Driver");
-    properties.setProperty("javax.persistence.jdbc.user","sa");
-    properties.setProperty("javax.persistence.jdbc.password","");
-    properties.setProperty("javax.persistence.jdbc.url","jdbc:h2:tcp://localhost/~/test");
-    properties.setProperty("hibernate.default_schema", "MONITORING");
-    properties.setProperty("hibernate.show_sql", "true");
-    properties.setProperty("hibernate.hbm2ddl.auto", "create");
-    return properties;
+  final protected ServerConfig getServerConfig() {
+    DataSourceConfig dtc = new DataSourceConfig();
+    dtc.setDriver("org.h2.Driver");
+    dtc.setUsername("sa");
+    dtc.setPassword("");
+    dtc.setUrl("jdbc:h2:tcp://localhost/~/test");
+
+    ServerConfig sC = new ServerConfig();
+    sC.setName("monitoring");
+    sC.setDefaultServer(false);
+    sC.setClasses(new ArrayList<Class<?>>(Arrays.asList(Order.class, State.class)));
+    sC.setRegister(true);
+    sC.setDdlGenerate(false); // ddlGenerate drops all tables and create new tables
+    sC.setDdlRun(false); // ddlRun run migration scripts
+    sC.setDataSourceConfig(dtc);
+
+    return sC;
   }
 
   private List<Order> GenerateMockOrders() {
