@@ -1,24 +1,15 @@
 package swi_dal.DataSource.Implementation;
 
 import java.util.List;
+import java.util.Properties;
 import swi_dal.DataSource.Contract.ADataSource;
-import swi_dal.Dto.Order;
-import swi_dal.Dto.State;
+import swi_dal.Entity.Implementation.Order;
+import swi_dal.Entity.Implementation.State;
 
 public final class DataSource extends ADataSource {
 
   @Override
-  protected final String getHibernateConfig() {
-    return null;
-  }
-
-  @Override
-  public List<State> GetStates(String filter) {
-    return null;
-  }
-
-  @Override
-  public List<Order> GetOrders(String filter) {
+  protected final Properties getHibernateConfig() {
     return null;
   }
 }

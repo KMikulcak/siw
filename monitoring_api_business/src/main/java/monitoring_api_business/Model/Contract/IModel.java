@@ -1,6 +1,6 @@
 package monitoring_api_business.Model.Contract;
 
-public interface IEntity {
+public interface IModel {
 
   public int getId();
 }

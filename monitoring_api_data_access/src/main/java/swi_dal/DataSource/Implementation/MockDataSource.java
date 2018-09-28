@@ -4,37 +4,33 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.pmw.tinylog.Logger;
+import java.util.Properties;
+import javax.persistence.EntityManager;
+import org.hibernate.Session;
 import swi_dal.DataSource.Contract.ADataSource;
-import swi_dal.Dto.Order;
-import swi_dal.Dto.State;
+import swi_dal.Entity.Implementation.Order;
+import swi_dal.Entity.Implementation.State;
 
 public final class MockDataSource extends ADataSource {
 
-  private List<State> _states;
-  private List<Order> _orders;
-
   public MockDataSource() {
     super();
-    _states = GenerateMockStates();
-    _orders = GenerateMockOrders();
+
+    EM().persist(GenerateMockOrders());
+    EM().persist(GenerateMockStates());
   }
 
   @Override
-  protected final String getHibernateConfig() {
-    return null;
-  }
-
-  @Override
-  public List<State> GetStates(String filter) {
-    Logger.info("pull" + _states + "count: " + _states.size());
-    return _states;
-  }
-
-  @Override
-  public List<Order> GetOrders(String filter) {
-    Logger.info("pull" + _orders + "count: " + _orders.size());
-    return _orders;
+  protected final Properties getHibernateConfig() {
+    Properties properties = new Properties();
+    properties.setProperty("javax.persistence.jdbc.driver", "org.h2.Driver");
+    properties.setProperty("javax.persistence.jdbc.user","sa");
+    properties.setProperty("javax.persistence.jdbc.password","");
+    properties.setProperty("javax.persistence.jdbc.url","jdbc:h2:tcp://localhost/~/test");
+    properties.setProperty("hibernate.default_schema", "MONITORING");
+    properties.setProperty("hibernate.show_sql", "true");
+    properties.setProperty("hibernate.hbm2ddl.auto", "create");
+    return properties;
   }
 
   private List<Order> GenerateMockOrders() {

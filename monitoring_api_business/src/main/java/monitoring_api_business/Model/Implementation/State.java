@@ -1,9 +1,9 @@
 package monitoring_api_business.Model.Implementation;
 
 import java.sql.Timestamp;
-import monitoring_api_business.Model.Contract.IEntity;
+import monitoring_api_business.Model.Contract.IModel;
 
-public class State implements IEntity {
+public class State implements IModel {
 
   private final int _id;
   private final StateType _stateType;

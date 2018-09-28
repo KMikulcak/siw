@@ -1,8 +1,8 @@
 package monitoring_api_business.Model.Implementation;
 
-import monitoring_api_business.Model.Contract.IEntity;
+import monitoring_api_business.Model.Contract.IModel;
 
-public class Order implements IEntity {
+public class Order implements IModel {
 
   private final int _id;
   private final String _processingId;

@@ -31,7 +31,11 @@ public class StateDiagramController {
   @RequestMapping("/StateDiagram")
   public StateDiagram byProcessingId(
       @RequestParam(value = "processingId", defaultValue = "100-EE") String processingId) {
-    return _stateDiagramService.Get(processingId);
+    try {
+      return _stateDiagramService.Get(processingId);
+    }catch(Exception ex){
+     return null;
+    }
   }
 
   @RequestMapping("/StateDiagram/Filter")

@@ -3,10 +3,10 @@ package monitoring_api_business.Model.Implementation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import monitoring_api_business.Model.Contract.IEntity;
+import monitoring_api_business.Model.Contract.IModel;
 import monitoring_api_business.Model.Implementation.State.StateType;
 
-public class StateDiagram implements IEntity {
+public class StateDiagram implements IModel {
 
   private List<StateDiagramPoint> _stateList;
   private int _id;

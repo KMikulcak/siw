@@ -1,8 +1,14 @@
 package swi_dal.Repository;
 
 import java.util.List;
+import javax.persistence.NoResultException;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import monitoring_api_business.Model.Implementation.Order;
 import monitoring_api_business.Repository.Contract.IOrderRepository;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import swi_dal.DataSource.Contract.IDataSource;
 import swi_dal.Mapping.Implementation.OrderMapper;
 
@@ -18,25 +24,30 @@ public class OrderRepository extends BaseRepository
 
   @Override
   public Order GetOrderByProcessingId(String processingId) {
-    swi_dal.Dto.Order result = _dataSource.GetOrders("").stream().filter(order -> processingId.equals(order.ProcessingId()))
-        .findFirst()
-        .orElse(null);
+//    Criteria criteria = _dataSource.Session().createCriteria(swi_dal.Entity.Implementation.Order.class);
+//    swi_dal.Entity.Implementation.Order order = criteria.add(
+//        Restrictions.eq("processingId", processingId)).uniqueResult();
+    _dataSource.EM().find()
+    CriteriaBuilder cb = _dataSource.EM().getCriteriaBuilder();
+    CriteriaQuery<swi_dal.Entity.Implementation.Order> q = cb.createQuery(swi_dal.Entity.Implementation.Order.class);
+    Root<swi_dal.Entity.Implementation.Order> c = q.from(swi_dal.Entity.Implementation.Order.class);
+    _dataSource.EM().createQuery(q.select(c).where(cb.equal(c.get("processingID"), processingId))).getSingleResult();
 
-    if (result != null) {
-      return _mapper.MapDto(result);
-    } else {
+    try {
+      return _mapper.MapEntity(order);
+    } catch (final NoResultException nre) {
       return null;
     }
   }
 
   @Override
   public Order Get(int id) {
-    swi_dal.Dto.Order result = _dataSource.GetOrders("").stream().filter(order -> id == order.Id())
+    swi_dal.Entity.Implementation.Order result = _dataSource.GetOrders("").stream().filter(order -> id == order.getId())
         .findFirst()
         .orElse(null);
 
     if (result != null) {
-      return _mapper.MapDto(result);
+      return _mapper.MapEntity(result);
     } else {
       return null;
     }
@@ -44,13 +55,13 @@ public class OrderRepository extends BaseRepository
 
   @Override
   public List<Order> GetAll() {
-    List<swi_dal.Dto.Order> orders = _dataSource.GetOrders("");
-    return _mapper.MapDto(orders);
+    List<swi_dal.Entity.Implementation.Order> orders = _dataSource.GetOrders("");
+    return _mapper.MapEntity(orders);
   }
 
   @Override
   public List<Order> GetByFilter(String filter) {
-    List<swi_dal.Dto.Order> orders = _dataSource.GetOrders(filter);
-    return _mapper.MapDto(orders);
+    List<swi_dal.Entity.Implementation.Order> orders = _dataSource.GetOrders(filter);
+    return _mapper.MapEntity(orders);
   }
 }

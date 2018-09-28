@@ -19,19 +19,19 @@ public class StateRepository extends BaseRepository
 
   @Override
   public List<State> GetAllByOrderProcessingId(String processingId) {
-    List<swi_dal.Dto.State> result = _dataSource.GetStates("").stream().filter(state -> processingId.equals(state.ProcessingId())).collect(
+    List<swi_dal.Entity.Implementation.State> result = _dataSource.GetStates("").stream().filter(state -> processingId.equals(state.getProcessingId())).collect(
         Collectors.toList());
-    return _mapper.MapDto(result);
+    return _mapper.MapEntity(result);
   }
 
   @Override
   public State Get(int id) {
-    swi_dal.Dto.State result = _dataSource.GetStates("").stream().filter(state -> id == state.Id())
+    swi_dal.Entity.Implementation.State result = _dataSource.GetStates("").stream().filter(state -> id == state.getId())
         .findFirst()
         .orElse(null);
 
     if (result != null) {
-      return _mapper.MapDto(result);
+      return _mapper.MapEntity(result);
     } else {
       return null;
     }
@@ -39,13 +39,13 @@ public class StateRepository extends BaseRepository
 
   @Override
   public List<State> GetAll() {
-    List<swi_dal.Dto.State> states = _dataSource.GetStates("");
-    return _mapper.MapDto(states);
+    List<swi_dal.Entity.Implementation.State> states = _dataSource.GetStates("");
+    return _mapper.MapEntity(states);
   }
 
   @Override
   public List<State> GetByFilter(String filter) {
-    List<swi_dal.Dto.State> states = _dataSource.GetStates(filter);
-    return _mapper.MapDto(states.subList(0, 3));
+    List<swi_dal.Entity.Implementation.State> states = _dataSource.GetStates(filter);
+    return _mapper.MapEntity(states.subList(0, 3));
   }
 }

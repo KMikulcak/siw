@@ -1,12 +1,10 @@
 package swi_dal.DataSource.Contract;
 
-import java.util.List;
-import swi_dal.Dto.Order;
-import swi_dal.Dto.State;
+import javax.persistence.EntityManager;
+import org.hibernate.Session;
 
 public interface IDataSource {
+  public EntityManager EM();
 
-  List<State> GetStates(String filter);
-
-  List<Order> GetOrders(String filter);
+  public Session Session();
 }
