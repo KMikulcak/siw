@@ -1,0 +1,294 @@
+21:42:41.522 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:42:41.550 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:42:41.567 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:42:41.602 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:42:41.802 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:19)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:12)
+21:44:44.908 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:44:44.936 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:44:44.955 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:44:44.996 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:44:45.184 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:19)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:12)
+21:46:03.443 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:46:03.465 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:46:03.489 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:46:03.523 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:46:03.728 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:19)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:12)
+21:55:25.261 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:55:25.287 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:55:25.302 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:55:25.341 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:55:25.530 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:16)
+21:57:16.168 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:57:16.190 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:57:16.206 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:57:16.252 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:57:16.476 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+21:57:50.967 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:57:50.990 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:57:51.005 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:57:51.046 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:57:51.214 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+21:58:03.604 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:58:03.627 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:58:03.643 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:58:03.682 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:58:03.860 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+21:58:23.305 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+21:58:23.326 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+21:58:23.343 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+21:58:23.378 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+21:58:23.575 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+23:28:38.095 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+23:28:38.121 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+23:28:38.139 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+23:28:38.194 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+23:28:38.390 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+23:32:37.302 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+23:32:37.325 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+23:32:37.341 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+23:32:37.382 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+23:32:37.556 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+23:32:51.979 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+23:32:52.003 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+23:32:52.020 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+23:32:52.065 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+23:32:52.251 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+23:33:43.686 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+23:33:43.713 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+23:33:43.729 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+23:33:43.765 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+23:33:43.929 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+23:35:13.559 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+23:35:13.583 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+23:35:13.600 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+23:35:13.641 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+23:35:13.828 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)
+23:35:32.971 [main] INFO  io.ebean.EbeanVersion - ebean version: 11.22.6
+23:35:33.002 [main] INFO  i.e.config.properties.LoadContext - loaded properties from [application.properties]
+23:35:33.019 [main] INFO  o.a.datasource.pool.ConnectionPool - DataSourcePool [monitoring] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200]
+23:35:33.063 [main] INFO  io.ebean.internal.DefaultContainer - DatabasePlatform name:monitoring platform:h2
+23:35:33.250 [main] ERROR i.e.s.deploy.BeanDescriptorManager - Error in deployment
+java.lang.IllegalStateException: Bean class swi_dal.Entity.Implementation.State is not enhanced?
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.setEntityBeanClass(BeanDescriptorManager.java:1556)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.createByteCode(BeanDescriptorManager.java:1423)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readDeployAssociations(BeanDescriptorManager.java:1333)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.readEntityDeploymentAssociations(BeanDescriptorManager.java:748)
+	at io.ebeaninternal.server.deploy.BeanDescriptorManager.deploy(BeanDescriptorManager.java:369)
+	at io.ebeaninternal.server.core.InternalConfiguration.<init>(InternalConfiguration.java:197)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:124)
+	at io.ebeaninternal.server.core.DefaultContainer.createServer(DefaultContainer.java:35)
+	at io.ebean.EbeanServerFactory.createInternal(EbeanServerFactory.java:109)
+	at io.ebean.EbeanServerFactory.create(EbeanServerFactory.java:70)
+	at swi_dal.DataSource.Contract.ADataSource.<init>(ADataSource.java:16)
+	at swi_dal.DataSource.Implementation.MockDataSource.<init>(MockDataSource.java:16)
+	at com.spf.swi.Bootstrapper$DataSourceFactory.SetMode(Bootstrapper.java:57)
+	at com.spf.swi.Bootstrapper.Build(Bootstrapper.java:31)
+	at com.spf.swi.SwiApplication.main(SwiApplication.java:14)

@@ -37,6 +37,9 @@ dependencies {
     compile group: 'io.ebean', name: 'ebean-agent', version: '11.11.1'
 // https://mvnrepository.com/artifact/org.avaje/avaje-agentloader
     compile group: 'org.avaje', name: 'avaje-agentloader', version: '2.1.2'
+    // https://mvnrepository.com/artifact/org.avaje.ebeanorm/avaje-ebeanorm
+    compile group: 'org.avaje.ebeanorm', name: 'avaje-ebeanorm', version: '8.1.1'
+
 
 }
 

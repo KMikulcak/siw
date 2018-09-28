@@ -8,15 +8,14 @@ import org.pmw.tinylog.Logger;
 
 public abstract class ADataSource implements IDataSource {
 
-  private final EbeanServer _server;
+  private EbeanServer _server;
 
   protected ADataSource() {
-    if (!AgentLoader.loadAgentFromClasspath("ebean-agent","debug=1;packages=org.example.model")) {
+    if (!AgentLoader.loadAgentFromClasspath("ebean-agent","debug=9;packages=swi_dal.Entity.Implementation")) {
+    // create the EbeanServer instance
+      _server = EbeanServerFactory.create(getServerConfig());
 
     }
-
-// create the EbeanServer instance
-    _server = EbeanServerFactory.create(getServerConfig());
 
     Logger.info(this.getClass().getSimpleName() + " initialized");
   }
