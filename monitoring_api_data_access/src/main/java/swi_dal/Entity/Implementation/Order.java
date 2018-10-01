@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.annotations.NaturalId;
 import swi_dal.Entity.Contract.IEntity;
 
 @Entity
@@ -15,33 +16,33 @@ public class Order implements IEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", unique = true, nullable = false)
-  private int _id;
+  private int id;
 
   @Column(name = "processingID")
-  private String _processingId;
+  private String processingId;
 
   public Order() {
 
   }
 
   public Order(int id, String processingId){
-    _id = id;
-    _processingId = processingId;
+    this.id = id;
+    this.processingId = processingId;
   }
 
   public int getId() {
-    return _id;
+    return id;
   }
 
   public void setId(int _id) {
-    this._id = _id;
+    this.id = _id;
   }
 
   public String getProcessingId() {
-    return _processingId;
+    return processingId;
   }
 
   public void setProcessingId(String _processingId) {
-    this._processingId = _processingId;
+    this.processingId = _processingId;
   }
 }

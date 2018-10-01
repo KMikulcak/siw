@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.annotations.NaturalId;
 import swi_dal.Entity.Contract.IEntity;
 
 @Entity
@@ -16,54 +17,54 @@ public class State implements IEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", unique = true, nullable = false)
-  private int _id;
+  private int id;
   @Column(name = "stateType")
-  private int _stateType;
+  private int stateType;
   @Column(name = "processingID")
-  private String _processingId;
+  private String processingId;
   @Column(name = "timeStamp")
-  private Timestamp _timeStamp;
+  private Timestamp timeStamp;
 
   public State() {
 
   }
 
   public State(int id, int stateType, String processingId, Timestamp timestamp){
-    _id = id;
-    _stateType = stateType;
-    _processingId = processingId;
-    _timeStamp = timestamp;
+    this.id = id;
+    this.stateType = stateType;
+    this.processingId = processingId;
+    this.timeStamp = timestamp;
   }
 
   public int getId() {
-    return _id;
+    return id;
   }
 
   public void setId(int _id) {
-    this._id = _id;
+    this.id = _id;
   }
 
   public int getStateType() {
-    return _stateType;
+    return stateType;
   }
 
   public void setStateType(int _stateType) {
-    this._stateType = _stateType;
+    this.stateType = _stateType;
   }
 
   public String getProcessingId() {
-    return _processingId;
+    return processingId;
   }
 
   public void setProcessingId(String _processingId) {
-    this._processingId = _processingId;
+    this.processingId = _processingId;
   }
 
   public Timestamp getTimeStamp() {
-    return _timeStamp;
+    return timeStamp;
   }
 
   public void setTimeStamp(Timestamp _timeStamp) {
-    this._timeStamp = _timeStamp;
+    this.timeStamp = _timeStamp;
   }
 }

@@ -15,32 +15,39 @@ public final class MockDataSource extends ADataSource {
 
   public MockDataSource() {
     super();
-
-    EM().persist(GenerateMockOrders());
-    EM().persist(GenerateMockStates());
+    EM().getTransaction().begin();
+    for (Order order:GenerateMockOrders()
+    ) {
+      EM().merge(order);
+    }
+    for (State state:GenerateMockStates()
+    ) {
+      EM().merge(state);
+    }
+    EM().getTransaction().commit();
   }
 
   @Override
   protected final Properties getHibernateConfig() {
-    Properties properties = new Properties();
-    properties.setProperty("javax.persistence.jdbc.driver", "org.h2.Driver");
-    properties.setProperty("javax.persistence.jdbc.user","sa");
-    properties.setProperty("javax.persistence.jdbc.password","");
-    properties.setProperty("javax.persistence.jdbc.url","jdbc:h2:tcp://localhost/~/test");
-    properties.setProperty("hibernate.default_schema", "MONITORING");
-    properties.setProperty("hibernate.show_sql", "true");
-    properties.setProperty("hibernate.hbm2ddl.auto", "create");
-    return properties;
-  }
+      Properties properties = new Properties();
+      properties.setProperty("javax.persistence.jdbc.driver", "org.h2.Driver");
+      properties.setProperty("javax.persistence.jdbc.user","sa");
+      properties.setProperty("javax.persistence.jdbc.password","");
+      properties.setProperty("javax.persistence.jdbc.url","jdbc:h2:tcp://localhost/~/test");
+      properties.setProperty("hibernate.default_schema", "MONITORING");
+      properties.setProperty("hibernate.show_sql", "true");
+      properties.setProperty("hibernate.hbm2ddl.auto", "create");
+      return properties;
+    }
 
-  private List<Order> GenerateMockOrders() {
-    return new ArrayList<Order>(Arrays.asList(new Order(1, "100-EE"),
-        new Order(2, "101-EE"),
-        new Order(3, "102-EE"),
-        new Order(4, "103-EE"),
-        new Order(5, "104-EE"),
-        new Order(6, "105-EE")
-    ));
+    private List<Order> GenerateMockOrders() {
+      return new ArrayList<Order>(Arrays.asList(new Order(1, "100-EE"),
+          new Order(2, "101-EE"),
+          new Order(3, "102-EE"),
+          new Order(4, "103-EE"),
+          new Order(5, "104-EE"),
+          new Order(6, "105-EE")
+      ));
   }
 
   private List<State> GenerateMockStates() {

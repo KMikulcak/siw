@@ -24,17 +24,11 @@ public class OrderRepository extends BaseRepository
 
   @Override
   public Order GetOrderByProcessingId(String processingId) {
-//    Criteria criteria = _dataSource.Session().createCriteria(swi_dal.Entity.Implementation.Order.class);
-//    swi_dal.Entity.Implementation.Order order = criteria.add(
-//        Restrictions.eq("processingId", processingId)).uniqueResult();
-    _dataSource.EM().find()
-    CriteriaBuilder cb = _dataSource.EM().getCriteriaBuilder();
-    CriteriaQuery<swi_dal.Entity.Implementation.Order> q = cb.createQuery(swi_dal.Entity.Implementation.Order.class);
-    Root<swi_dal.Entity.Implementation.Order> c = q.from(swi_dal.Entity.Implementation.Order.class);
-    _dataSource.EM().createQuery(q.select(c).where(cb.equal(c.get("processingID"), processingId))).getSingleResult();
+    Criteria criteria = _dataSource.Session().createCriteria(swi_dal.Entity.Implementation.Order.class);
+    criteria.add(Restrictions.eq("processingId",processingId));
 
     try {
-      return _mapper.MapEntity(order);
+      return _mapper.MapEntity( (swi_dal.Entity.Implementation.Order) criteria.uniqueResult());
     } catch (final NoResultException nre) {
       return null;
     }
@@ -42,7 +36,7 @@ public class OrderRepository extends BaseRepository
 
   @Override
   public Order Get(int id) {
-    swi_dal.Entity.Implementation.Order result = _dataSource.GetOrders("").stream().filter(order -> id == order.getId())
+    /*swi_dal.Entity.Implementation.Order result = _dataSource.GetOrders("").stream().filter(order -> id == order.getId())
         .findFirst()
         .orElse(null);
 
@@ -50,18 +44,23 @@ public class OrderRepository extends BaseRepository
       return _mapper.MapEntity(result);
     } else {
       return null;
-    }
+    }*/
+    return null;
   }
 
   @Override
   public List<Order> GetAll() {
-    List<swi_dal.Entity.Implementation.Order> orders = _dataSource.GetOrders("");
-    return _mapper.MapEntity(orders);
+    /*List<swi_dal.Entity.Implementation.Order> orders = _dataSource.GetOrders("");
+    return _mapper.MapEntity(orders);*/
+    return null;
   }
 
   @Override
   public List<Order> GetByFilter(String filter) {
+    /*
     List<swi_dal.Entity.Implementation.Order> orders = _dataSource.GetOrders(filter);
     return _mapper.MapEntity(orders);
+    */
+    return null;
   }
 }
